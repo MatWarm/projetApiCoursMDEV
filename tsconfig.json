@@ -3,12 +3,12 @@
     "target": "ES6",
     "module": "CommonJS",
     "outDir": "./dist", // Dossier de sortie pour les fichiers transpilés
-    "rootDir": "./src", // Dossier source où vous mettrez vos fichiers TypeScript
+    "rootDir": "./routes", // Dossier source où vous mettrez vos fichiers TypeScript
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*.ts"],
+  "include": ["routes/**/*.ts"],
   "exclude": ["node_modules"]
 }

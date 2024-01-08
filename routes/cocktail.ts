@@ -1,12 +1,12 @@
+//import express, { Request, Response } from "express";
+import express, { Request, Response, NextFunction, Router } from 'express';
+import fs from 'fs';
+import axios from 'axios';
+var router = Router()
 
 
-var express = require('express');
-var router = express.Router();
-var fs = require('fs');
-const axios = require('axios');
 
 const url : string = 'B:\\Cours mdev\\DEV WEB authentification\\Projet API\\data\\data.json';
-
 
 interface ingredients{
     nom:string;
@@ -21,7 +21,7 @@ interface Cocktail {
 
 
 
-function getData(url:string): Promise<{ cocktails: Array<Cocktail> } | null> {
+function getData(url:string): Array<Cocktail> | null {
     try {
         const data = fs.readFileSync(url, 'utf8');
         return JSON.parse(data);
@@ -53,7 +53,7 @@ async function callExternalAPI():Promise<any | null> {
 
 /* GET users listing. */
 router.get('/', function(req: Request, res: Response, next: Function) {
-    const jsonData : Promise<{ cocktails: Array<Cocktail> } | null>  = getData(url);
+    const jsonData :Array<Cocktail> | null  = getData(url);
     if (jsonData) {
         res.json(jsonData);
     } else {
@@ -63,13 +63,13 @@ router.get('/', function(req: Request, res: Response, next: Function) {
 
 
 router.get('/commandeCocktail/',async function(req: Request, res: Response){
-    const cocktailStock : Promise<{ cocktails: Array<Cocktail> } | null> = getData(url);
+    const cocktailStock :Array<Cocktail> | null = getData(url);
      const demandeClient = await callExternalAPI()
 
     if(cocktailStock && demandeClient != undefined){
         const nomBoisson = demandeClient.drinks[0].strDrink
 
-        const matchingCocktail = cocktailStock.cocktails.find(cocktail => cocktail.nom === nomBoisson );
+        const matchingCocktail = cocktailStock.find(cocktail => cocktail.nom === nomBoisson );
         if (matchingCocktail) {
             res.json("C'est un " + matchingCocktail + " qui part");
         } else {
