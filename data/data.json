@@ -1,0 +1,48 @@
+{
+  "cocktails": [
+    {
+      "nom": "Margarita",
+      "ingredients": [
+        {
+          "nom": "Tequila",
+          "quantité": "2 oz"
+        },
+        {
+          "nom": "Triple sec",
+          "quantité": "1 oz"
+        },
+        {
+          "nom": "Jus de citron vert",
+          "quantité": "1 oz"
+        },
+        {
+          "nom": "Sel",
+          "quantité": "Pincée"
+        }
+      ],
+      "instructions": "1. Mouiller le bord d'un verre à margarita avec du jus de citron vert et tremper dans du sel.\n2. Dans un shaker, mélanger la tequila, le triple sec et le jus de citron vert avec de la glace.\n3. Filtrer dans le verre préparé avec le sel.\n4. Décorer avec une tranche de citron vert."
+    },
+    {
+      "nom": "Piña Colada",
+      "ingredients": [
+        {
+          "nom": "Rhum blanc",
+          "quantité": "2 oz"
+        },
+        {
+          "nom": "Lait de coco",
+          "quantité": "2 oz"
+        },
+        {
+          "nom": "Jus d'ananas",
+          "quantité": "2 oz"
+        },
+        {
+          "nom": "Ananas frais",
+          "quantité": "Garniture"
+        }
+      ],
+      "instructions": "1. Mélanger le rhum blanc, le lait de coco et le jus d'ananas avec de la glace dans un mixeur.\n2. Verser dans un verre glacé.\n3. Garnir avec un morceau d'ananas frais."
+    }
+  ]
+}
